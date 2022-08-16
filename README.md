@@ -67,8 +67,8 @@ ping google.com -c 3
 **Now let's make root and EFI-partitions**
 `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1` (which shows above)
 
+![cfdisk-create-new-partition](https://user-images.githubusercontent.com/95308907/184887219-d017d777-5f51-4f07-abd3-5aad266a9fa2.png)
 
-![cfdisk-create-new-partition.png](:/ace01c91fd214ff3aa47533b6523f588)
 
 create at least 300M EFI system
 
