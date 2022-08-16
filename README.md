@@ -78,7 +78,12 @@ create at least 300M EFI system. Ppress enter key, select Type from the bottom m
 ![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
 
 
-create root partition
+**create root partition**
+
+For /(root) partition use the following configuration: New -> Size: rest of free space -> Type Linux filesystem.
+
+After you review Partition Table select Write, answer with yes in order to apply
+
 
 **Format partitions**
 
