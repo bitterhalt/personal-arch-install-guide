@@ -66,6 +66,7 @@ ping google.com -c 3
 **List your disks**
 
 `fdisk -l` (will show all of your disks as "/dev/sda or /dev/nvme0n1 etc.")
+![Screenshot_20220816_204521](https://user-images.githubusercontent.com/95308907/184945038-16875f8b-dd70-459e-91ee-82784ae5caa3.png)
 
 **Now let's make root and EFI-partitions**
 `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1` (which shows above)
