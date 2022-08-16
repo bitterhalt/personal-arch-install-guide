@@ -269,9 +269,10 @@ sudo systemctl enable fstrim.timer
 
 **Swap file**
 
-If you have less than 32gigabyts of ram it is highly good idea to make swap file
+If you have less than 32 gigabytes of ram it is highly good idea to make swap file
 You can follow this guide to make your swap file: https://bogdancornianu.com/change-swap-size-in-ubuntu/
 
+# 
 
 exit
 
