@@ -1,6 +1,6 @@
 # My Personal Arch installation guide
 
-This is a personal guide to install Arch linux with minimal Plasma DE. I must warn that this install is super minimal and does not contain many KDE apps like Kmail and Kalendar!
+This is a personal guide to install Arch linux with minimal Plasma DE. I must warn that this install is super minimal and does not contain many KDE apps like Kmail, Kalendar and KDE Connect!
 
 I am not a professional by any means and I made this quide just for personal use so I highly recommend you to read the official [`wiki`](https://wiki.archlinux.org/index.php/Installation_guide)!
 
