@@ -18,7 +18,7 @@ To check the service status, use `timedatectl status`
 
 `loadkeys keymap (keymap)` <--load keymap for current session
 
-**Wifi**
+**Wifi** (skip this if you use etherner)
 
 Connect to WiFi using iwctl. Just enter this command and follow the instructions
 
