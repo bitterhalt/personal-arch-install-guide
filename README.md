@@ -70,7 +70,13 @@ ping google.com -c 3
 ![cfdisk-create-new-partition](https://user-images.githubusercontent.com/95308907/184887219-d017d777-5f51-4f07-abd3-5aad266a9fa2.png)
 
 
-create at least 300M EFI system
+create at least 300M EFI system. Ppress enter key, select Type from the bottom menu and choose EFI System partition type, as shown in the following screenshots.
+
+![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184942340-c3c32914-614c-4c08-97bd-5d6dd4e77adb.png)
+
+
+![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
+
 
 create root partition
 
