@@ -1,6 +1,9 @@
 # My Personal Arch installation guide
 
-This is a personal guide to install Arch linux with minimal Plasma DE. I recommend you to read the official [`wiki`](https://wiki.archlinux.org/index.php/Installation_guide)!
+This is a personal guide to install Arch linux with minimal Plasma DE. 
+
+I am not a professional by any means and I made this quide just for personal use so I highly recommend you to read the official [`wiki`](https://wiki.archlinux.org/index.php/Installation_guide)!
+
 
 # Begin to install base system
 
