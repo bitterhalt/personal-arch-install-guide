@@ -66,8 +66,8 @@ ping google.com -c 3
 
 **Now let's make root and EFI-partitions**
 `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1` (which shows above)
-![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184943467-5527632b-b168-498e-923d-697c4b21c801.png)
 
+![Select-Arch-Linux-Installation-Disk](https://user-images.githubusercontent.com/95308907/184943576-cea39914-feac-4672-8f0e-3467130a27dd.png)
 
 create at least 300M EFI system. Ppress enter key, select Type from the bottom menu and choose EFI System partition type, as shown in the following screenshots.
 
