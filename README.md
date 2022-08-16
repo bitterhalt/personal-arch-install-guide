@@ -173,7 +173,7 @@ echo "yourhostname" > /etc/hostname
 ```
 
 
-**Set up host file (not necessary if you dont need that)**
+**Set up host file (not necessary anymore if you don't need hostfile)**
 ```
 touch /etc/hosts
 ```
