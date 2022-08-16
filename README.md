@@ -251,7 +251,7 @@ sudo pacman -S pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber g
 **Install Desktop Enverioment and Software( KDE Plasma)**
 
 ```
-sudo pacman -S  plasma-meta dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle
+sudo pacman -S  plasma-meta dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle --needed
 ```
 
 **Enable sddm**
