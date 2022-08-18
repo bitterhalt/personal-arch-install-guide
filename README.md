@@ -75,7 +75,7 @@ ping google.com -c 3
 
 ![Select-Arch-Linux-Installation-Disk](https://user-images.githubusercontent.com/95308907/184943576-cea39914-feac-4672-8f0e-3467130a27dd.png)
 
-create at least 300M EFI system. Ppress enter key, select Type from the bottom menu and choose EFI System partition type, as shown in the following screenshots.
+create at least 300M EFI system. Press enter key, select Type from the bottom menu and choose EFI System partition type, as shown in the following screenshots.
 
 ![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184942340-c3c32914-614c-4c08-97bd-5d6dd4e77adb.png)
 
