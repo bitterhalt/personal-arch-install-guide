@@ -138,7 +138,7 @@ arch-chroot /mnt
 
 ```
 nano /etc/vconsole.conf
-kaymap=(keymap)
+KEYMAP=(keymap)
 ```
 
 **Set timezone**
