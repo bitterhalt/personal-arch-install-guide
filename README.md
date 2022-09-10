@@ -162,11 +162,6 @@ ln -sf /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 hwclock --systohc
 ```
 
-**set ntp**
-```
-timedatectl set-ntp true
-```
-
 **Setting locale**
 
 ```
