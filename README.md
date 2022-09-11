@@ -238,16 +238,16 @@ Reboot and log in -->
 sudo pacman -S xf86-video-amdgpu (xf86-video-your gpu type, see the wiki)
 ```
 
-**Install sound drivers**
+**Install Pipewire sound drivers**
 
 ```
 sudo pacman -S pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber gst-plugin-pipewire --needed
 ```
 
-**Install Desktop Enverioment and Software( KDE Plasma)**
+**Install KDE Desktop Enverioment and Software**
 
 ```
-sudo pacman -S  plasma-meta dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle --needed
+sudo pacman -S  plasma dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle --needed
 ```
 
 **Enable sddm**
