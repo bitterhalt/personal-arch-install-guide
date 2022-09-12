@@ -9,7 +9,7 @@ I am not a professional by any means and I made this quide just for personal use
 
 # Begin to install base system
 
-**Ensure the system clock is accurate**
+Ensure the system clock is accurate
 
 ```
 timedatectl set-ntp true
@@ -66,12 +66,12 @@ ping google.com -c 3
 
 ## Partitioning
 
-**List your disks**
+List your disks
 
 `fdisk -l` (will show all of your disks as "/dev/sda or /dev/nvme0n1 etc.")
 ![Screenshot_20220816_204521](https://user-images.githubusercontent.com/95308907/184945038-16875f8b-dd70-459e-91ee-82784ae5caa3.png)
 
-**Make root and EFI-partitions**
+Make root and EFI-partitions
 
 Choose the disk you want to use
 
@@ -86,14 +86,14 @@ Create at least 300M EFI system. Press enter key, change partion "Type" from the
 ![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
 
 
-**Create root partition**
+Create root partition
 
 For /(root) partition use the following configuration: "New" -> Size: rest of free space -> change "Type" to Linux filesystem.
 
 After you review Partition Table select "Write", answer with "yes" in order to apply
 
 
-**Format partitions**
+Format partitions
 
 ```
 mkfs.fat -F32 /dev/(efi partition)
@@ -102,7 +102,7 @@ mkfs.fat -F32 /dev/(efi partition)
 mkfs.ext4 /dev/(root partion)
 ```
 
-**Mounting partitions**
+Mounting partitions
 
 ```
 mount /dev/[root partition name] /mnt
@@ -110,13 +110,13 @@ mkdir -p /mnt/boot/efi
 mount /dev/[efi partition name] /mnt/boot/efi
 ```
 
-**Install base system**
+Install base system
 
 ```
 pacstrap /mnt base base-devel linux linux-firmware linux-headers vim nano
 ```
 
-**Make fstab**
+Make fstab
 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -125,7 +125,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ## Enter your systen using chroot
 
 
-**Chroot your system)**
+Chroot your system)
 
 ```
 arch-chroot /mnt
@@ -140,7 +140,7 @@ arch-chroot /mnt
 ```
 
 
-**set persistent keymap**
+Set persistent keymap
 
 ```
 nano /etc/vconsole.conf
@@ -148,9 +148,7 @@ KEYMAP=(keymap)
 ```
 
 
-**Timezone**
-
-to list available zones
+List available zones
 
 ```
 timedatectl list-timezones
@@ -171,9 +169,11 @@ hwclock --systohc
 ```
 
 
-**Set your locale**
+Set your locale
 
-*nano /etc/locale.gen*
+```
+nano /etc/locale.gen*
+```
 
 ```
 (Uncomment en_US.UTF-8 UTF-8)
@@ -190,13 +190,13 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
 
 
-**Set hostname**
+Set hostname
 ```
 echo "yourhostname" > /etc/hostname
 ```
 
 
-**Set up host file** (not necessary anymore if you don't need hostfile)
+Set up host file (not necessary anymore if you don't need hostfile)
 ```
 touch /etc/hosts
 ```
@@ -234,7 +234,7 @@ EDITOR=nano visudo
 
 ## GRUB install
 
-**Install GRUB**
+Install GRUB
 
 ```
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
@@ -256,38 +256,38 @@ enter your username and password
 
 ## Plasma, Display, Sound
 
-**GPU driver**
+GPU driver
 
 ```
 sudo pacman -S xf86-video-amdgpu (xf86-video-your gpu type, see the wiki)
 ```
 
-**Pipewire audio drivers**
+Pipewire audio drivers
 
 ```
 sudo pacman -S pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber gst-plugin-pipewire --needed
 ```
 
-**KDE Desktop Enverioment and Software**
+KDE Desktop Enverioment and Software
 
 ```
 sudo pacman -S  plasma dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle --needed
 ```
 
-**Enable sddm**
+Enable sddm
 
 ```
 sudo systemctl enable sddm
 ```
 
-**enable trim**
+Enable trim
 
 ```
 sudo systemctl enable fstrim.timer
 ```
 ## Bonus
 
-**Swap file**
+Swap file
 
 If you have less than 32 gigabytes of ram it is highly good idea to make swap file.
 You can follow this guide to make your swap file: https://bogdancornianu.com/change-swap-size-in-ubuntu/
