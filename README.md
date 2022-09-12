@@ -196,7 +196,7 @@ echo "yourhostname" > /etc/hostname
 ```
 
 
-Set up host file (not necessary anymore if you don't need hostfile)
+**Set up host file** (not necessary anymore if you don't need hostfile)
 ```
 touch /etc/hosts
 ```
@@ -254,7 +254,7 @@ type: reboot
 enter your username and password
 ```
 
-# Plasma, Display, Sound
+## Plasma, Display, Sound
 
 **GPU driver**
 
