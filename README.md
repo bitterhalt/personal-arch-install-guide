@@ -218,8 +218,11 @@ EDITOR=nano visudo
 (uncomment) ->  %wheel ALL=(ALL) ALL)
 ```
 
-**Install GRUB**
+# Bootloader install
+Choose between GRUB and systemd-boot.
 
+
+**Basic GRUB install**
 ```
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 ```
@@ -229,6 +232,51 @@ grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+**Systemd-bootloader install**
+
+```
+bootctl install
+```
+**Enable systemd update service**
+
+```
+systemctl anable systemd-boot-update.service
+```
+**Loader configuration**
+
+go-to: your/bootloader-folder.loader.conf
+
+edit and uncomment timeout
+```
+loader/loader.conf
+
+timeout  4
+```
+**Add bootloader entries**
+
+
+Arch Linux
+
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img # for AMD use: amd-ucode.img
+initrd  /initramfs-linux.img
+options root=UUID=your-own-UUID rw
+```
+
+Arch Linux (fallback initramfs)
+
+```
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img # for AMD use: amd-ucode.img
+initrd  /initramfs-linux-fallback.img
+options root=UUID=your-own-UUID rw
+```
+
+
 
 Reboot and log in -->
 
