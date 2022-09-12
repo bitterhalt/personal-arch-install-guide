@@ -87,7 +87,7 @@ create at least 300M EFI system. Press enter key, select Type from the bottom me
 
 For /(root) partition use the following configuration: New -> Size: rest of free space -> Type Linux filesystem.
 
-After you review Partition Table select Write, answer with yes in order to apply
+After you review Partition Table select "Write", answer with "yes" in order to apply
 
 
 **Format partitions**
@@ -119,9 +119,9 @@ pacstrap /mnt base base-devel linux linux-firmware linux-headers vim nano
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-# Enter your system
+# Enter your using chroot
 
-Enter chroot (arch installation)
+**Enter (Arch installation)**
 
 ```
 arch-chroot /mnt
