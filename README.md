@@ -66,19 +66,19 @@ ping google.com -c 3
 
 ## Partitioning
 
-List your disks
+**List your disks**
 
 `fdisk -l` (will show all of your disks as "/dev/sda or /dev/nvme0n1 etc.")
 ![Screenshot_20220816_204521](https://user-images.githubusercontent.com/95308907/184945038-16875f8b-dd70-459e-91ee-82784ae5caa3.png)
 
-Make root and EFI-partitions
+**Make root and EFI-partitions**
 
 Choose the disk you want to use
 
 Disk is usually `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1`
 ![Select-Arch-Linux-Installation-Disk](https://user-images.githubusercontent.com/95308907/184943576-cea39914-feac-4672-8f0e-3467130a27dd.png)
 
-Create at least 300M EFI system. Press enter key, change partion "Type" from the bottom menu and choose "EFI System partition"
+**Create at least 300M EFI system.** Press enter key, change partion "Type" from the bottom menu and choose "EFI System partition"
 
 ![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184942340-c3c32914-614c-4c08-97bd-5d6dd4e77adb.png)
 
@@ -86,14 +86,14 @@ Create at least 300M EFI system. Press enter key, change partion "Type" from the
 ![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
 
 
-Create root partition
+**Create root partition**
 
 For /(root) partition use the following configuration: "New" -> Size: rest of free space -> change "Type" to Linux filesystem.
 
 After you review Partition Table select "Write", answer with "yes" in order to apply
 
 
-Format partitions
+**Format partitions**
 
 ```
 mkfs.fat -F32 /dev/(efi partition)
@@ -102,7 +102,7 @@ mkfs.fat -F32 /dev/(efi partition)
 mkfs.ext4 /dev/(root partion)
 ```
 
-Mounting partitions
+**Mount partitions**
 
 ```
 mount /dev/[root partition name] /mnt
@@ -110,7 +110,7 @@ mkdir -p /mnt/boot/efi
 mount /dev/[efi partition name] /mnt/boot/efi
 ```
 
-Install base system
+## Install base system
 
 ```
 pacstrap /mnt base base-devel linux linux-firmware linux-headers vim nano
