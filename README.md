@@ -57,7 +57,7 @@ Connect to your target Wi-Fi:
 station wlan0 connect "Name of Network/WiFi"
 ```
 
-**Test internet**
+Test internet
 
 ```
 ping google.com -c 3
@@ -83,7 +83,7 @@ create at least 300M EFI system. Press enter key, select Type from the bottom me
 ![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
 
 
-**create root partition**
+create root partition
 
 For /(root) partition use the following configuration: New -> Size: rest of free space -> Type Linux filesystem.
 
@@ -113,7 +113,7 @@ mount /dev/[efi partition name] /mnt/boot/efi
 pacstrap /mnt base base-devel linux linux-firmware linux-headers vim nano
 ```
 
-**Make fstab**
+Make fstab
 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -134,14 +134,14 @@ arch-chroot /mnt
  loadkeys keymap (keymap) <--load keymap for current session
 ```
 
-**set persistent keymap**
+set persistent keymap
 
 ```
 nano /etc/vconsole.conf
 KEYMAP=(keymap)
 ```
 
-**Set timezone**
+**Timezone**
 
 to list available zones
 
@@ -149,14 +149,14 @@ to list available zones
 timedatectl list-timezones
 ```
 
-**set timezone**
+set timezone
 Use you own Country/City!
 
 ```
 ln -sf /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 ```
 
-**Run hwclock to generate /etc/adjtime**
+Run hwclock to generate /etc/adjtime
 
 ```
 hwclock --systohc
@@ -169,22 +169,22 @@ nano /etc/locale.gen
 (Uncomment en_US.UTF-8 UTF-8)
 ```
 
-**Run locale-gen**
+Run locale-gen
 ```
 locale-gen
 ```
-**Set your locale to /etc/locale.conf**
+Set your locale to /etc/locale.conf
 ```
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
 
-**Set hostname**
+Set hostname
 ```
 echo "yourhostname" > /etc/hostname
 ```
 
 
-**Set up host file (not necessary anymore if you don't need hostfile)**
+Set up host file (not necessary anymore if you don't need hostfile)
 ```
 touch /etc/hosts
 ```
@@ -201,14 +201,14 @@ touch /etc/hosts
 pacman -S networkmanager network-manager-applet intel-ucode(or amd-ucode) wireless_tools grub efibootmgr bluez bluez-utils power-profiles-daemon
 ```
 
-**Enable Network and bluetooth**
+Enable Network and bluetooth
 
 ```
 systemctl enable NetworkManager
 systemctl enable bluetooth.service
 ```
 
-**Set your user**
+Set your user
 
 ```
 passwd <-- password for root
@@ -254,7 +254,7 @@ go-to: your/bootloader-folder.loader.conf
 
 edit and uncomment timeout
 
-loader/loader.conf
+*loader/loader.conf*
 ```
 timeout  4
 ```
@@ -263,7 +263,7 @@ timeout  4
 
 go-to: your/bootloader/folder/entries and add these two entries
 
-Arch Linux
+*arch.conf*
 
 ```
 title   Arch Linux
@@ -273,7 +273,7 @@ initrd  /initramfs-linux.img
 options root=UUID=your-own-UUID rw
 ```
 
-Arch Linux (fallback initramfs)
+*arch-fallback.conf *
 
 ```
 title   Arch Linux
