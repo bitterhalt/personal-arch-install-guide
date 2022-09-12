@@ -250,7 +250,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 **Reboot and log in -->**
 
 ```
-type: reboot and after that enter your username and password
+type: reboot
+enter your username and password
 ```
 
 # Plasma, Display, Sound
