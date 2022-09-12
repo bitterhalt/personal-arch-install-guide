@@ -266,7 +266,7 @@ systemctl anable systemd-boot-update.service
 
 go-to: your/bootloader-folder.loader.conf
 
-edit and uncomment timeout
+edit and uncomment line: `timeout`
 
 *loader/loader.conf*
 ```
