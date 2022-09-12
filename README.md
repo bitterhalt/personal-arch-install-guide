@@ -238,6 +238,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Systemd-bootloader install
 
+Install systemd-boot
 ```
 bootctl install
 ```
