@@ -121,11 +121,13 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 # Enter your using chroot
 
-**Enter (Arch installation)**
+
+**Chroot your system)**
 
 ```
 arch-chroot /mnt
 ```
+
 
 **Set keyboard language and time**
 
@@ -134,12 +136,14 @@ arch-chroot /mnt
  loadkeys keymap (keymap) <--load keymap for current session
 ```
 
+
 **set persistent keymap**
 
 ```
 nano /etc/vconsole.conf
 KEYMAP=(keymap)
 ```
+
 
 **Timezone**
 
@@ -156,13 +160,15 @@ Use you own Country/City!
 ln -sf /usr/share/zoneinfo/Europe/Helsinki /etc/localtime
 ```
 
+
 Run hwclock to generate /etc/adjtime
 
 ```
 hwclock --systohc
 ```
 
-Set your locale
+
+**Set your locale**
 
 *nano /etc/locale.gen*
 
@@ -179,6 +185,7 @@ Set your locale to
 ```
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
+
 
 **Set hostname**
 ```
@@ -210,7 +217,8 @@ systemctl enable NetworkManager
 systemctl enable bluetooth.service
 ```
 
-Set your user
+
+**Set your user**
 
 ```
 passwd <-- password for root
@@ -252,6 +260,7 @@ Enable systemd update service
 systemctl anable systemd-boot-update.service
 ```
 
+
 **Loader configuration**
 
 go-to: your/bootloader-folder.loader.conf
@@ -262,6 +271,7 @@ edit and uncomment timeout
 ```
 timeout  4
 ```
+
 
 **Bootloader entries**
 
