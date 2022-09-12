@@ -285,7 +285,7 @@ title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /intel-ucode.img # for AMD use: amd-ucode.img
 initrd  /initramfs-linux.img
-options root=UUID=your-own-UUID rw
+options root=UUID=123456 rw
 ```
 
 *arch-fallback.conf*
@@ -295,7 +295,7 @@ title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /intel-ucode.img # for AMD use: amd-ucode.img
 initrd  /initramfs-linux-fallback.img
-options root=UUID=your-own-UUID rw
+options root=UUID=123456 rw
 ```
 
 
