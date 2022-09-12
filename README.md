@@ -256,8 +256,10 @@ loader/loader.conf
 
 timeout  4
 ```
-**Add bootloader entries**
 
+**Bootloader entries**
+
+go-to: your/bootloader/folder/entries and add these two entries
 
 Arch Linux
 
