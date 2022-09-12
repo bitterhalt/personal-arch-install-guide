@@ -125,7 +125,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ## Enter your systen using chroot
 
 
-Chroot your system)
+Chroot your system
 
 ```
 arch-chroot /mnt
