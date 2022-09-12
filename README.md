@@ -83,7 +83,7 @@ create at least 300M EFI system. Press enter key, select Type from the bottom me
 ![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
 
 
-create root partition
+**create root partition**
 
 For /(root) partition use the following configuration: New -> Size: rest of free space -> Type Linux filesystem.
 
@@ -113,7 +113,7 @@ mount /dev/[efi partition name] /mnt/boot/efi
 pacstrap /mnt base base-devel linux linux-firmware linux-headers vim nano
 ```
 
-Make fstab
+**Make fstab**
 
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -134,7 +134,7 @@ arch-chroot /mnt
  loadkeys keymap (keymap) <--load keymap for current session
 ```
 
-set persistent keymap
+**set persistent keymap**
 
 ```
 nano /etc/vconsole.conf
@@ -162,10 +162,11 @@ Run hwclock to generate /etc/adjtime
 hwclock --systohc
 ```
 
-**Setting locale**
+Set your locale
+
+*nano /etc/locale.gen*
 
 ```
-nano /etc/locale.gen
 (Uncomment en_US.UTF-8 UTF-8)
 ```
 
@@ -173,12 +174,13 @@ Run locale-gen
 ```
 locale-gen
 ```
-Set your locale to /etc/locale.conf
+Set your locale to
+*/etc/locale.conf*
 ```
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 ```
 
-Set hostname
+**Set hostname**
 ```
 echo "yourhostname" > /etc/hostname
 ```
@@ -224,6 +226,8 @@ Choose between GRUB and systemd-boot.
 
 # Basic GRUB install
 
+**Install GRUB**
+
 ```
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 ```
@@ -238,7 +242,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Systemd-bootloader install
 
-Install systemd-boot
+**Install systemd-boot**
 ```
 bootctl install
 ```
@@ -273,7 +277,7 @@ initrd  /initramfs-linux.img
 options root=UUID=your-own-UUID rw
 ```
 
-*arch-fallback.conf *
+*arch-fallback.conf*
 
 ```
 title   Arch Linux
@@ -285,21 +289,24 @@ options root=UUID=your-own-UUID rw
 
 
 
-Reboot and log in -->
+**Reboot and log in -->**
+
 
 # Plasma, Display, Sound
+
+**GPU driver**
 
 ```
 sudo pacman -S xf86-video-amdgpu (xf86-video-your gpu type, see the wiki)
 ```
 
-**Install Pipewire sound drivers**
+**Pipewire audio drivers**
 
 ```
 sudo pacman -S pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber gst-plugin-pipewire --needed
 ```
 
-**Install KDE Desktop Enverioment and Software**
+**KDE Desktop Enverioment and Software**
 
 ```
 sudo pacman -S  plasma dolphin ark konsole gwenview powerdevil ffmpegthumbs firefox kate spectacle --needed
