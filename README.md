@@ -228,7 +228,7 @@ Choose between GRUB and systemd-boot.
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 ```
 
-**Save GRUB:**
+Save GRUB:
 
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -242,19 +242,20 @@ Install systemd-boot
 ```
 bootctl install
 ```
-**Enable systemd update service**
+Enable systemd update service
 
 ```
 systemctl anable systemd-boot-update.service
 ```
+
 **Loader configuration**
 
 go-to: your/bootloader-folder.loader.conf
 
 edit and uncomment timeout
-```
-loader/loader.conf
 
+loader/loader.conf
+```
 timeout  4
 ```
 
