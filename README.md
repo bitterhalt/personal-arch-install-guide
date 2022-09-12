@@ -71,12 +71,14 @@ ping google.com -c 3
 `fdisk -l` (will show all of your disks as "/dev/sda or /dev/nvme0n1 etc.")
 ![Screenshot_20220816_204521](https://user-images.githubusercontent.com/95308907/184945038-16875f8b-dd70-459e-91ee-82784ae5caa3.png)
 
-**Now let's make root and EFI-partitions**
-`cfdisk /dev/sda` or `cfdisk /dev/nvme0n1` (which shows above)
+**Make root and EFI-partitions**
 
+Choose the disk you want to use
+
+Disk is usually `cfdisk /dev/sda` or `cfdisk /dev/nvme0n1`
 ![Select-Arch-Linux-Installation-Disk](https://user-images.githubusercontent.com/95308907/184943576-cea39914-feac-4672-8f0e-3467130a27dd.png)
 
-create at least 300M EFI system. Press enter key, select Type from the bottom menu and choose EFI System partition type, as shown in the following screenshots.
+Create at least 300M EFI system. Press enter key, change partion "Type" from the bottom menu and choose "EFI System partition"
 
 ![EFI-System-Type](https://user-images.githubusercontent.com/95308907/184942340-c3c32914-614c-4c08-97bd-5d6dd4e77adb.png)
 
@@ -86,7 +88,7 @@ create at least 300M EFI system. Press enter key, select Type from the bottom me
 
 **Create root partition**
 
-For /(root) partition use the following configuration: New -> Size: rest of free space -> Type Linux filesystem.
+For /(root) partition use the following configuration: "New" -> Size: rest of free space -> change "Type" to Linux filesystem.
 
 After you review Partition Table select "Write", answer with "yes" in order to apply
 
