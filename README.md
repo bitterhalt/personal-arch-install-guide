@@ -231,11 +231,8 @@ EDITOR=nano visudo
 (uncomment) ->  %wheel ALL=(ALL) ALL)
 ```
 
-# Bootloader install
-Choose between GRUB and systemd-boot.
 
-
-## Basic GRUB install
+## GRUB install
 
 **Install GRUB**
 
@@ -250,60 +247,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 
-
-## Systemd-bootloader install
-
-**Install systemd-boot**
-```
-bootctl install
-```
-Enable systemd update service
-
-```
-systemctl anable systemd-boot-update.service
-```
-
-
-**Loader configuration**
-
-go-to: your/bootloader-folder.loader.conf
-
-edit and uncomment line: `timeout`
-
-*loader/loader.conf*
-```
-timeout  4
-```
-
-
-**Bootloader entries**
-
-go-to: your/bootloader/folder/entries and add these two entries
-
-*arch.conf*
-
-```
-title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /intel-ucode.img # for AMD use: amd-ucode.img
-initrd  /initramfs-linux.img
-options root=UUID=123456 rw
-```
-
-*arch-fallback.conf*
-
-```
-title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /intel-ucode.img # for AMD use: amd-ucode.img
-initrd  /initramfs-linux-fallback.img
-options root=UUID=123456 rw
-```
-
-
-
 **Reboot and log in -->**
-
+type: reboot
+enter your username and password
 
 # Plasma, Display, Sound
 
