@@ -17,13 +17,14 @@ timedatectl set-ntp true
 
 To check the service status, use `timedatectl status`
 
-**Load keys**
+## Load keys
 
 `localectl list-keymaps` <\-\- list all keymaps
 
 `loadkeys keymap (keymap)` <--load keymap for current session
 
-**Wifi** `(skip this if you use ethernet)`
+## Wifi
+`(skip this if you use ethernet)`
 
 Connect to WiFi using iwctl. Just enter this command and follow the instructions
 
@@ -63,7 +64,7 @@ Test internet
 ping google.com -c 3
 ```
 
-# Partitioning
+## Partitioning
 
 **List your disks**
 
@@ -83,7 +84,7 @@ create at least 300M EFI system. Press enter key, select Type from the bottom me
 ![Select-EFI-System](https://user-images.githubusercontent.com/95308907/184942636-c29c7650-8b30-4424-bda7-2fdd57efbe11.png)
 
 
-**create root partition**
+**Create root partition**
 
 For /(root) partition use the following configuration: New -> Size: rest of free space -> Type Linux filesystem.
 
@@ -119,7 +120,7 @@ pacstrap /mnt base base-devel linux linux-firmware linux-headers vim nano
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-# Enter your using chroot
+## Enter your systen using chroot
 
 
 **Chroot your system)**
@@ -129,7 +130,7 @@ arch-chroot /mnt
 ```
 
 
-**Set keyboard language and time**
+## Set keyboard language and time
 
 ```
  localectl list-keymaps <-- list all keymaps
@@ -204,7 +205,7 @@ touch /etc/hosts
 ```
 
 
-**Install reguired packages**
+## Install reguired packages
 
 ```
 pacman -S networkmanager network-manager-applet intel-ucode(or amd-ucode) wireless_tools grub efibootmgr bluez bluez-utils power-profiles-daemon
@@ -218,7 +219,7 @@ systemctl enable bluetooth.service
 ```
 
 
-**Set your user**
+## Set your user
 
 ```
 passwd <-- password for root
@@ -232,7 +233,7 @@ EDITOR=nano visudo
 Choose between GRUB and systemd-boot.
 
 
-# Basic GRUB install
+## Basic GRUB install
 
 **Install GRUB**
 
@@ -248,7 +249,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 
-# Systemd-bootloader install
+## Systemd-bootloader install
 
 **Install systemd-boot**
 ```
@@ -333,7 +334,7 @@ sudo systemctl enable sddm
 ```
 sudo systemctl enable fstrim.timer
 ```
-# Bonus
+## Bonus
 
 **Swap file**
 
