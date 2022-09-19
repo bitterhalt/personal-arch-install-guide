@@ -225,7 +225,7 @@ systemctl enable bluetooth.service
 
 ```
 passwd <-- password for root
-useradd -mG wheel (username)
+useradd -m -G wheel (username)
 passwd (username) <-- passwor for user
 EDITOR=nano visudo
 (uncomment) ->  %wheel ALL=(ALL) ALL)
